@@ -24,7 +24,6 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
         lateinit var porcentajeDescunto:TextView
         lateinit var btnImgProducto:ImageButton
         lateinit var btnImgCarrito:ImageButton
-        lateinit var btnDetalle: Button
 
         init {
             nombre=itemView.findViewById(R.id.lblNombreH)
@@ -33,7 +32,6 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
             porcentajeDescunto=itemView.findViewById(R.id.lblPorcenDescuentoH)
             btnImgProducto=itemView.findViewById(R.id.btnImgProductoH)
             btnImgCarrito=itemView.findViewById(R.id.btnImgCarritoH)
-            btnDetalle=itemView.findViewById(R.id.btnDetalleProductoH)
 
 
         }
@@ -65,13 +63,10 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
         Glide.with(holder.itemView.context).load(btnImgProductoUrl).into(holder.btnImgProducto)
 
         // Imagen button nos lleva a detalle del producto
-        /*holder.btnImgProducto.setOnClickListener {
-            onclick?.invoke(producto)
-        }*/
-
-        holder.btnDetalle.setOnClickListener {
+        holder.btnImgProducto.setOnClickListener {
             onclick?.invoke(producto)
         }
+
 
 
     }
