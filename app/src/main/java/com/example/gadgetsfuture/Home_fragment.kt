@@ -109,19 +109,19 @@ class Home_fragment : Fragment() {
     }
 
 
-    fun cargarLista(listaProductos: JSONArray){
+    fun cargarLista(listaProductos:JSONArray){
         recycler.layoutManager= LinearLayoutManager(activity)
         var adapter=adapterHome(activity, listaProductos)
         // Cambio de fragmento desde otro
         adapter.onclick= {
             val bundle=Bundle()
-            //bundle.putInt("id_cliente",it.getInt("id"))
+            //bundle.putInt("id_productoH",it.getInt("id"))
             bundle.putInt("id_productoH",it.getInt("id"))
             val transaction=requireFragmentManager().beginTransaction()
-            // Cart_fragment() no va, debe ir detalle de un producto
             var fragmento=detalle_producto_fragment()
             fragmento.arguments=bundle
-            transaction.replace(R.id.contenedor_home, fragmento).commit()
+            transaction.replace(R.id.container, fragmento).commit()
+            //transaction.replace(R.id.contenedor_view_home, fragmento).commit()
             transaction.addToBackStack(null)
         }
         recycler.adapter=adapter

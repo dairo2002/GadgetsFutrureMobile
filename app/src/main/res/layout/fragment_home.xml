@@ -6,8 +6,19 @@
     tools:context=".FrmPrincipal">
 
 
-    <LinearLayout
+    <!-- <androidx.fragment.app.FragmentContainerView
         android:id="@+id/contenedor_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"> -->
+
+
+
+    <LinearLayout
+        android:id="@+id/contenedor_view_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -189,5 +200,7 @@
             </LinearLayout>
 
     </LinearLayout>
+
+    <!--</androidx.fragment.app.FragmentContainerView>-->
 
 </RelativeLayout>

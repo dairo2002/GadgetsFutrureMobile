@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 import android.widget.ImageButton
 import android.widget.TextView
@@ -23,6 +24,7 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
         lateinit var porcentajeDescunto:TextView
         lateinit var btnImgProducto:ImageButton
         lateinit var btnImgCarrito:ImageButton
+        lateinit var btnDetalle: Button
 
         init {
             nombre=itemView.findViewById(R.id.lblNombreH)
@@ -31,6 +33,9 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
             porcentajeDescunto=itemView.findViewById(R.id.lblPorcenDescuentoH)
             btnImgProducto=itemView.findViewById(R.id.btnImgProductoH)
             btnImgCarrito=itemView.findViewById(R.id.btnImgCarritoH)
+            btnDetalle=itemView.findViewById(R.id.btnDetalleProductoH)
+
+
         }
 
     }
@@ -59,11 +64,13 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
         holder.precio.text = "$precio"
         Glide.with(holder.itemView.context).load(btnImgProductoUrl).into(holder.btnImgProducto)
 
-
-
         // Imagen button nos lleva a detalle del producto
-        holder.btnImgProducto.setOnClickListener {
-            onclick?.invoke(listaProductoH.getJSONObject(position))
+        /*holder.btnImgProducto.setOnClickListener {
+            onclick?.invoke(producto)
+        }*/
+
+        holder.btnDetalle.setOnClickListener {
+            onclick?.invoke(producto)
         }
 
 
