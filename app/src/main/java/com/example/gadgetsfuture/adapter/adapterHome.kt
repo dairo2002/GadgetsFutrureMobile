@@ -4,8 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -32,8 +30,6 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
             porcentajeDescunto=itemView.findViewById(R.id.lblPorcenDescuentoH)
             btnImgProducto=itemView.findViewById(R.id.btnImgProductoH)
             btnImgCarrito=itemView.findViewById(R.id.btnImgCarritoH)
-
-
         }
 
     }
