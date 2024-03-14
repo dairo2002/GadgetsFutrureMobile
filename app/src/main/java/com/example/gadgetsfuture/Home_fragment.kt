@@ -115,13 +115,11 @@ class Home_fragment : Fragment() {
         // Cambio de fragmento desde otro
         adapter.onclick= {
             val bundle=Bundle()
-            //bundle.putInt("id_productoH",it.getInt("id"))
             bundle.putInt("id_productoH",it.getInt("id"))
             val transaction=requireFragmentManager().beginTransaction()
             var fragmento=detalle_producto_fragment()
             fragmento.arguments=bundle
             transaction.replace(R.id.container, fragmento).commit()
-            //transaction.replace(R.id.contenedor_view_home, fragmento).commit()
             transaction.addToBackStack(null)
         }
         recycler.adapter=adapter

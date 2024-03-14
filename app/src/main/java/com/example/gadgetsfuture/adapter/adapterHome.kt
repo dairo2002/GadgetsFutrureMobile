@@ -16,18 +16,18 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
     :RecyclerView.Adapter<adapterHome.MyHolder>() {
 
     inner class MyHolder(Item: View):RecyclerView.ViewHolder(Item){
-        lateinit var nombre:TextView
-        lateinit var precio:TextView
-        lateinit var precioDescunto:TextView
-        lateinit var porcentajeDescunto:TextView
+        lateinit var lblnombre:TextView
+        lateinit var lblprecio:TextView
+        lateinit var lblprecioDescunto:TextView
+        lateinit var lblporcentajeDescunto:TextView
         lateinit var btnImgProducto:ImageButton
         lateinit var btnImgCarrito:ImageButton
 
         init {
-            nombre=itemView.findViewById(R.id.lblNombreH)
-            precio=itemView.findViewById(R.id.lblPrecioH)
-            precioDescunto=itemView.findViewById(R.id.lblDescuentoPrecioH)
-            porcentajeDescunto=itemView.findViewById(R.id.lblPorcenDescuentoH)
+            lblnombre=itemView.findViewById(R.id.lblNombreH)
+            lblprecio=itemView.findViewById(R.id.lblPrecioH)
+            lblprecioDescunto=itemView.findViewById(R.id.lblDescuentoPrecioH)
+            lblporcentajeDescunto=itemView.findViewById(R.id.lblPorcenDescuentoH)
             btnImgProducto=itemView.findViewById(R.id.btnImgProductoH)
             btnImgCarrito=itemView.findViewById(R.id.btnImgCarritoH)
         }
@@ -54,8 +54,8 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
         //Variable para ir al carrito de compras
         //val btnImgCarrito
 
-        holder.nombre.text = nombre
-        holder.precio.text = "$precio"
+        holder.lblnombre.text = nombre
+        holder.lblprecio.text = "$precio"
         Glide.with(holder.itemView.context).load(btnImgProductoUrl).into(holder.btnImgProducto)
 
         // Imagen button nos lleva a detalle del producto

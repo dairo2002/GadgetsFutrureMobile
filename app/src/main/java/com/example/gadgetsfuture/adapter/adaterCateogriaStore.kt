@@ -29,9 +29,10 @@ class adaterCateogriaStore(var context: Context?, var listaCategoria:JSONArray)
 
     override fun onBindViewHolder(holder: adaterCateogriaStore.MyHolder, position: Int) {
         val categoria = listaCategoria.getJSONObject(position)
+
+        // Tremos la categoiras
         holder.lblNombreCategoria.text=categoria.getString("nombre")
-        val nombreCategoria = categoria.getString("nombre")
-        holder.lblNombreCategoria.text=nombreCategoria
+
 
     }
 
