@@ -33,7 +33,6 @@ class store_fragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var view: View
-    //lateinit var lblNombre: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +98,7 @@ class store_fragment : Fragment() {
                 try {
                     recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
                     val adapter = adaterCateogriaStore(activity, listaCategoria = response)
+                    //val adapter = adaterCateogriaStore(requireContext(), listaCategoria = response)
                     recyclerView.adapter = adapter
 
                 } catch (e: JSONException){
@@ -122,12 +122,9 @@ class store_fragment : Fragment() {
             null,
             {response->
                 try {
-                    //recyclerView.layoutManager = LinearLayoutManager(activity)
-                    //recyclerView.layoutManager = GridLayoutManager(activity, 2)
-                    //val adater = adapterProductoStore(activity, listaProdStore = response)
-                    //recyclerView.adapter=adater
                     recyclerView.layoutManager = GridLayoutManager(activity, 2)
                     val adater = adapterProductoStore(activity, listaProdStore = response)
+                    //val adater = adapterProductoStore(requireContext(), listaProdStore = response)
                     adater.onclick={
                         val bundle=Bundle()
                         bundle.putInt("id_productoH",it.getInt("id"))
