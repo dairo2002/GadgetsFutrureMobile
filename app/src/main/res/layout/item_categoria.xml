@@ -2,54 +2,31 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
     >
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp">
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="#bfbfbf"
             >
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_mouse_24"
-                        android:layout_margin="3dp"
-                        android:background="#ffffff"/>
-
-                    <TextView
-                        android:id="@+id/lblNombreCategoria"
+                    <Button
+                        android:id="@+id/btnNomListCategoria"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mouses"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="3dp"
+                        android:textSize="15sp"
                         />
-
-                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

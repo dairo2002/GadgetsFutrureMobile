@@ -47,11 +47,14 @@ class Home_fragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        // LO DEJAMOS DE ESTA FORMA PARA QUE NOS MUESTR ELA VISTA DE INICIO SESIÓN
+        var view = inflater.inflate(R.layout.activity_inicio_sesion, container, false)
 
-        var view = inflater.inflate(R.layout.fragment_home, container, false)
-        recycler=view.findViewById(R.id.RVHome)
+        // MUESTRA LA VISTA HOME CON LOS PRODUCTO
+        //var view = inflater.inflate(R.layout.fragment_home, container, false)
+        //recycler=view.findViewById(R.id.RVHome)
 
-        llamarPeticion()
+        //llamarPeticion()
 
         return view
 

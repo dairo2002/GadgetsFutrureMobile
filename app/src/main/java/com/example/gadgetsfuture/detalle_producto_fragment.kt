@@ -112,8 +112,6 @@ class detalle_producto_fragment : Fragment() {
 
            - Por id de producto
             "categoria/api/detail_products/v1/<int:product_id>/
-
-
          */
 
         var url=config().urlBase+"tienda/categoria/api/detail_products/v1/$id_producto/"

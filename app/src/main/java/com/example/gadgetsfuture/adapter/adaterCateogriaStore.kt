@@ -9,15 +9,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gadgetsfuture.R
 import com.example.gadgetsfuture.model.Categoria
 import org.json.JSONArray
+import org.json.JSONObject
 
 class adaterCateogriaStore(var context: Context?, var listaCategoria:JSONArray)
     :RecyclerView.Adapter<adaterCateogriaStore.MyHolder>(){
 
         inner class MyHolder(ItemCategoria : View):RecyclerView.ViewHolder(ItemCategoria) {
-            lateinit var lblNombreCategoria: TextView
+            lateinit var btnNomListCategoria: TextView
 
             init {
-                lblNombreCategoria=itemView.findViewById(R.id.lblNombreCategoria)
+                btnNomListCategoria=itemView.findViewById(R.id.btnNomListCategoria)
             }
         }
 
@@ -27,11 +28,18 @@ class adaterCateogriaStore(var context: Context?, var listaCategoria:JSONArray)
         return MyHolder(itemView)
     }
 
+    var onclick:((JSONObject)->Unit)?=null
     override fun onBindViewHolder(holder: adaterCateogriaStore.MyHolder, position: Int) {
         val categoria = listaCategoria.getJSONObject(position)
 
         // Tremos la categoiras
-        holder.lblNombreCategoria.text=categoria.getString("nombre")
+        holder.btnNomListCategoria.text=categoria.getString("nombre")
+
+        // Accion para que nos lleve a los productos de una categoria
+        holder.btnNomListCategoria.setOnClickListener {
+            onclick?.invoke(categoria)
+        }
+
 
 
     }
