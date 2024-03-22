@@ -51,14 +51,14 @@ class Registrarse : AppCompatActivity() {
 
         val btnRegistrarse = findViewById<Button>(R.id.btnRegistrarse)
         btnRegistrarse.setOnClickListener {
-            validarCampos()
+            /*validarCampos()
             GlobalScope.launch(Dispatchers.Main) {
                 try {
                     peticionSignup()
                 } catch (error: Exception) {
                     Toast.makeText(this@Registrarse, "Error en la petición de inicio de sesión: ${error.message}", Toast.LENGTH_SHORT).show()
                 }
-            }
+            }*/
 
         }
     }
@@ -165,8 +165,8 @@ class Registrarse : AppCompatActivity() {
             {response ->
                 Toast.makeText(this, "Registro exitoso!", Toast.LENGTH_SHORT).show()
                 // Corregir
-                val fragmento=Home_fragment()
-                supportFragmentManager.beginTransaction().replace(R.id.container, fragmento).addToBackStack(null).commit()
+                //val fragmento=Home_fragment()
+                //supportFragmentManager.beginTransaction().replace(R.id.container, fragmento).addToBackStack(null).commit()
             },
             {error ->
                 Toast.makeText(this, "Error en la solicitud: ${error.message}", Toast.LENGTH_SHORT).show()

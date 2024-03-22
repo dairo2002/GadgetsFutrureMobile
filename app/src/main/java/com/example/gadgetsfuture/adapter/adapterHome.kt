@@ -64,7 +64,6 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
         }
 
 
-
     }
 
     override fun getItemCount(): Int {
